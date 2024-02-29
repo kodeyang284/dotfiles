@@ -145,3 +145,6 @@ alias r="ranger"
 alias vim="nvim"
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias sdot='dotfiles ls-tree -r main --name-only'
+
+#enviroment
+export EDITOR='vim'
