@@ -24,7 +24,7 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 import:
-  - ~/.config/alacritty/theme/themes/iterm.yaml
+  - ~/.config/alacritty/themes/themes/iterm.yaml
 
 window:
   # Window dimensions (changes require restart)

@@ -1,4 +1,4 @@
-import = ["/home/kode/.config/alacritty/theme/themes/iterm.toml"]
+import = ["/home/kode/.config/alacritty/themes/themes/iterm.toml"]
 
 [font]
 size = 16.0

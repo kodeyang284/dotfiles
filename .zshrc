@@ -140,7 +140,7 @@ unset key
 
 ## alias
 alias la="ls -A"
-alias neofetch="neofetch | lolcat"
+alias nf="neofetch | lolcat"
 alias r="ranger"
 alias vim="nvim"
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
