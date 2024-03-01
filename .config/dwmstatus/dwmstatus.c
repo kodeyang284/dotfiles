@@ -240,7 +240,7 @@ main(void)
 		t0 = gettemperature("/sys/devices/virtual/thermal/thermal_zone0", "temp");
 		t1 = gettemperature("/sys/devices/virtual/thermal/thermal_zone1", "temp");
 
-		status = smprintf(" 󰧺 %s | 󰏈 %s%s |  %s | 󱈏 %s | 󰔛 %s",
+		status = smprintf(" 📲 %s | 🧪 %s%s | 🚊 %s | 🔋 %s | ⏰ %s",
 				 kbmap, t0, t1, avgs, bat, tmsh);
 		setstatus(status);
 
