@@ -1,9 +1,10 @@
 syntax on
 set enc=utf-8
 set nu
-set tabstop=4
+set tabstop=2
 set expandtab
 set autoindent
+set laststatus=3
 set t_Co=256
 set noundofile
 set nobackup
@@ -15,6 +16,7 @@ set noerrorbells
 set vb t_vb=
 set novisualbell
 set hlsearch
+set scrolloff=4
 set completeopt=menu,preview,longest
 set <S-h> :bp<CR>
 set <S-l> :bn<CR>
