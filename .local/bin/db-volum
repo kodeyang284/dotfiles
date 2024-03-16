@@ -1,0 +1,12 @@
+#!/bin/sh
+
+ICON="📢"
+VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
+
+if pactl get-sink-mute @DEFAULT_SINK@ | grep yes > /dev/null; then
+  status="🔇"
+else
+  status=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
+fi
+
+printf "$ICON:%s\n" "$status"

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+ICONn="🥶" 
+ICONc="🔥"
+
+crit=70 # critical temperature
+
+read -r temp </sys/class/thermal/thermal_zone0/temp
+temp="${temp%???}" #%??? delete 3 characters in the end
+
+if [ "$temp" -lt "$crit" ] ; then
+    printf "$ICONn:%s°C\n" "$temp"
+else
+    printf "$ICONc:%s°C\n" "$temp"
+fi

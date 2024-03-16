@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ICON="💾"
+DISK=$(df -h "/home" | awk ' /[0-9]/ {print $3 "/" $2}')
+
+printf "$ICON:%s\n" "$DISK"
