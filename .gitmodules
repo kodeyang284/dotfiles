@@ -4,6 +4,6 @@
 [submodule ".config/dwm"]
 	path = .config/dwm
 	url = git@github.com:kodeyang284/dwm.git
-[submodule ".config/nvim"]
-	path = .config/nvim/archnvim
+[submodule ".config/archnvim"]
+	path = .config/archnvim
 	url = git@github.com:kodeyang284/archnvim.git
