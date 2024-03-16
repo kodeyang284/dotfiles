@@ -7,3 +7,6 @@
 [submodule ".config/lazyvim"]
 	path = .config/lazyvim
 	url = git@github.com:kodeyang284/lazyvim.git
+[submodule ".config/nvim/archnvim"]
+	path = .config/nvim/archnvim
+	url = git@github.com:kodeyang284/archnvim.git
