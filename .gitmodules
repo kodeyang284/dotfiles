@@ -7,3 +7,6 @@
 [submodule ".config/archnvim"]
 	path = .config/archnvim
 	url = git@github.com:kodeyang284/archnvim.git
+[submodule ".config/dwmblocks"]
+	path = .config/dwmblocks
+	url = git@github.com:kodeyang284/dwmblocks.git
