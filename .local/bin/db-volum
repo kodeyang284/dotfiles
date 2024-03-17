@@ -9,4 +9,9 @@ else
   status=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
 fi
 
-printf "$ICON:%s\n" "$status"
+if pamixer --list-sinks | grep bluez_output >/dev/null ; then
+  printf "🎧:%s\n" "$status"
+else
+  printf "$ICON:%s\n" "$status"
+fi
+
