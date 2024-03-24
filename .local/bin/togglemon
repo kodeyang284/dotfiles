@@ -11,4 +11,5 @@ else
   xrandr --output "$intern" --off --output "$extern" --auto
 fi
 
+# change a to a extern monitor may cause wallpaper draw badlly, use feh automaticlly reload the wallpaper
 [[ -f ~/.fehbg ]] && . ~/.fehbg

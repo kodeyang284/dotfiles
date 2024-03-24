@@ -12,6 +12,13 @@ export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 
+export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
+export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
+export PYTHONUSERBASE="$XDG_DATA_HOME/python"
+
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
 if [ -z "$DISPALY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
 fi

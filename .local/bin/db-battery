@@ -9,4 +9,4 @@ case "$(cat "$BATTERY/status" 2>&1)" in
 	"Unknown") status="♻️" ;;
 	*) exit 1 ;;
 esac
-printf "$status:%s%%\n" "$capacity" # %% means print a real %
+printf "$status:%s%%\n" "$capacity" # %% means print a real %(use "%" to 转义 %)
