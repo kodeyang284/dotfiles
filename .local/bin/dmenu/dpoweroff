@@ -1,0 +1,17 @@
+#!/bin/sh
+
+menu="poweroff\nreboot\nlock"
+prompt="Poweroff: "
+
+cmd=$(echo -e $menu | dmenu -i -p "$prompt" "$@")
+while [ -n "$cmd" ]; do
+  if [ $cmd = "poweroff" ]; then
+    shutdown -h now
+  elif [ $cmd = "reboot" ]; then
+    reboot
+  elif [ $cmd = "lock"]
+    slock&
+  fi
+  exit 0
+done
+

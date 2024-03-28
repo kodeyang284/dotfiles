@@ -1,0 +1,5 @@
+#!/bin/sh
+entries="ls /usr/share/applications"
+prompt="Drun: "
+
+$entries | sed s/.desktop//g | dmenu -i -l 6 -p "$prompt" "$@" | xargs gtk-launch -r 2>&1 >/dev/null

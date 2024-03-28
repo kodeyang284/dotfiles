@@ -1,14 +1,14 @@
 #!/bin/sh
 
 intern=eDP-1
-extern=DP-1
+extern=HDMI-1
 
-xrandr | grep -q "HDMI-1 connected" && extern=HDMI-1
+xrandr | grep -q "DP-1 connected" && extern=DP-1
 
 if xrandr | grep -q "$extern disconnected"; then
-  xrandr --output "$extern" --off --output "$intern" --auto
+  sleep 2; xrandr --output "$extern" --off --output "$intern" --auto
 else
-  xrandr --output "$extern" --primary --auto --output "$intern" --left-of "$extern" --auto
+  sleep 2; xrandr --output "$extern" --primary --auto --output "$intern" --auto --left-of "$extern" 
 fi
 
 [[ -f ~/.fehbg ]] && . ~/.fehbg
