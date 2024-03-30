@@ -890,7 +890,7 @@ font:
 
   # Keep the log file after quitting Alacritty.
   #persistent_logging: false
-
+9
   # Log level
   #
   # Values for `log_level`:

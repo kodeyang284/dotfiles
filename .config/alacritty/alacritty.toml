@@ -1,7 +1,7 @@
 import = ["/home/kode/.config/alacritty/themes/themes/iterm.toml"]
 
 [font]
-size = 9.25  
+size = 13.25  
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -21,7 +21,7 @@ style = "Regular"
 
 [window]
 dynamic_title = true
-opacity = 0.8
+opacity = 0.8 
 title = "Alacritty"
 
 [cursor.style]
@@ -30,8 +30,3 @@ shape = "Block"
 
 [cursor.vi_mode_style]
 shape = "Block"
-
-#[[keyboard.bindings]]
-#action = "CreateNewWindow"
-#key = "Enter"
-#mods = "Super"
