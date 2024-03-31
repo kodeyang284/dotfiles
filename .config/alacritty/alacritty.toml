@@ -1,7 +1,11 @@
-import = ["/home/kode/.config/alacritty/themes/themes/iterm.toml"]
+import = ["/home/kode/.config/alacritty/alacritty-theme/themes/iterm.toml"]
+
+[colors.primary]
+background = '#1d1f21' ## default black
+#foreground = '#fffbf6'
 
 [font]
-size = 13.25  
+size = 10.25  
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"

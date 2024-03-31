@@ -10,3 +10,4 @@ alias grep='grep --color=auto'
 
 export EDITOR='vim'
 export PATH=$PATH:/home/kode/.local/bin
+export PATH=$PATH:$(find ~/.local/bin -type d | paste -s -d ':' -)
