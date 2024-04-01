@@ -3,7 +3,7 @@
 intern=eDP-1
 extern=$(xrandr | grep "\sconnected" | grep -v "$intern" | awk '{print $1}')
 
-if [ -n "$extern" ] ; then
+if [[ -n $extern ]] ; then
   xrandr --output "$intern" --off --output "$extern" --auto
 else
   xrandr --output "$intern" --auto
