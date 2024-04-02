@@ -5,7 +5,7 @@ background = '#1d1f21' ## default black
 #foreground = '#fffbf6'
 
 [font]
-size = 13.25  
+size = 9.25  
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -29,8 +29,8 @@ opacity = 0.8
 title = "Alacritty"
 
 [cursor.style]
-shape = "Block"
-#shape = "Beam"
+#shape = "Block"
+shape = "Beam"
 
 [cursor.vi_mode_style]
 shape = "Block"
