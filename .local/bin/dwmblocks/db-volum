@@ -1,17 +1,33 @@
 #!/bin/sh
 
-ICON="📢"
+#ICON="📢"
+#VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
+#
+#if pactl get-sink-mute @DEFAULT_SINK@ | grep yes > /dev/null; then
+#  status="🔇"
+#else
+#  status=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
+#fi
+#
+#if pamixer --list-sinks | grep bluez_output >/dev/null ; then
+#  printf "🎧:%s\n" "$status"
+#else
+#  printf "$ICON:%s\n" "$status"
+#fi
+#
+
+ICON="󰕾"
 VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
 
 if pactl get-sink-mute @DEFAULT_SINK@ | grep yes > /dev/null; then
-  status="🔇"
+  printf ""
 else
   status=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
 fi
 
 if pamixer --list-sinks | grep bluez_output >/dev/null ; then
-  printf "🎧:%s\n" "$status"
+  printf "󰋋 %s\n" "$status"
 else
-  printf "$ICON:%s\n" "$status"
+  printf "$ICON %s\n" "$status"
 fi
 

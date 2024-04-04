@@ -10,4 +10,4 @@ else
 fi
 
 # change a to a extern monitor may cause wallpaper draw badlly, use feh automaticlly reload the wallpaper
-[[ -f ~/.fehbg ]] && . ~/.fehbg
+[[ -f ~/.fehbg ]] && . ~/.fehbg &

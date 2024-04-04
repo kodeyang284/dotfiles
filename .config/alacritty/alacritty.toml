@@ -5,7 +5,7 @@ background = '#1d1f21' ## default black
 #foreground = '#fffbf6'
 
 [font]
-size = 9.25  
+size = 13.25  
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"

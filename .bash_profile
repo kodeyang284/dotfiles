@@ -2,8 +2,11 @@
 # ~/.bash_profile
 #
 
-[[ -f "${XDG_CONFIG_HOME:-${HOME}/.bashrc}" ]] && \
-  . ${XDG_CONFIG_HOME:-${HOME}}/.bashrc
+BASHRC_HOME=$XDG_CONFIG_HOME/bash
+
+[[ -f ${BASHRC_HOME:-${HOME}}/.bashrc ]] && \
+  . $BASHRC_HOME/.bashrc
+
 exec zsh
 
 #[[ -f ~/.zshenv ]] && exec zsh
