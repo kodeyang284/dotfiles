@@ -1,13 +1,15 @@
 #!/bin/sh
 BATTERY=/sys/class/power_supply/BAT0
 read -r capacity <$BATTERY/capacity
-#case "$(cat "$BATTERY/status" 2>&1)" in
-#	"Full") status="🛑" ;;
-#	"Discharging") status="🔋" ;;
-#	"Charging") status="🔌" ;;
-#	"Not charging") status="⚡" ;;
-#	"Unknown") status="♻️" ;;
-#	*) exit 1 ;;
-#esac
-status="󰂅"
-printf "$status %s%%\n" "$capacity" # %% means print a real %(use "%" to 转义 %)
+case "$(cat "$BATTERY/status" 2>&1)" in
+	"Full") status="🛑" ;;
+	##"Discharging") status="󰂁🔋" ;;
+	"Discharging") status="󰂁" ;;
+	##"Charging") status="🔌" ;;
+	"Charging") status="󰂊" ;;
+	"Not charging") status="⚡" ;;
+	"Unknown") status="♻️" ;;
+	*) exit 1 ;;
+esac
+#status=" 󰂁"
+printf "$status %s\n" "$capacity" # %% means print a real %(use "%" to 转义 %)

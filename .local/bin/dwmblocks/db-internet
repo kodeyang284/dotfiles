@@ -9,7 +9,8 @@
 
 if [ "$(cat /sys/class/net/wlp2s0/operstate 2>/dev/null)" = 'up' ] ;
 then
-  wifiicon="$(awk '/^\s*w/ { print "󱚽", int($3 * 100 / 70) "%" }' /proc/net/wireless)"
+  #wifiicon="$(awk '/^\s*w/ { print "󱚽", int($3 * 100 / 70) "%" }' /proc/net/wireless)"
+  wifiicon="$(awk '/^\s*w/ { print "󱚽", int($3 * 100 / 70) }' /proc/net/wireless)"
 else
   wifiicon="󱛅"
 fi

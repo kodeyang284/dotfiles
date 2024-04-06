@@ -5,7 +5,7 @@ background = '#1d1f21' ## default black
 #foreground = '#fffbf6'
 
 [font]
-size = 13.25  
+size = 9.5  
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -24,9 +24,9 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window]
-dynamic_title = true
+dynamic_title = false
 opacity = 0.8 
-title = "Alacritty"
+title = "RTFM"
 
 [cursor.style]
 #shape = "Block"
@@ -34,3 +34,11 @@ shape = "Beam"
 
 [cursor.vi_mode_style]
 shape = "Block"
+
+[keyboard]
+bindings = [
+  { key = "F", mods = "Control|Shift", action = "ToggleFullscreen" },
+]
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.66"

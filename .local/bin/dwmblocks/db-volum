@@ -23,6 +23,7 @@ if pactl get-sink-mute @DEFAULT_SINK@ | grep yes > /dev/null; then
   printf ""
 else
   status=$(pactl get-sink-volume @DEFAULT_SINK@ | grep Volume | gawk '{print $5}')
+  status=${status%?}
 fi
 
 if pamixer --list-sinks | grep bluez_output >/dev/null ; then
