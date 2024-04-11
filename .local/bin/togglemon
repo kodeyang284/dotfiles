@@ -3,15 +3,14 @@
 intern=eDP-1
 extern=$(xrandr | grep "\sconnected" | grep -v "$intern" | awk '{print $1}')
 
-if [[ -n $extern ]] ; then
-  xrandr --output "$intern" --off --output "$extern" --auto
+if [[ -n $extern ]]; then
+	xrandr --output "$intern" --off --output "$extern" --auto
 else
-  xrandr --output "$intern" --auto \
-         --output DP-2 --off \
-         --output DP-1 --off \
-         --output HDMI-1 --off \
-         --output HDMI-2 --off
+	xrandr --output "$intern" --auto \
+		--output DP-2 --off \
+		--output DP-1 --off \
+		--output HDMI-1 --off \
+		--output HDMI-2 --off
 fi
 
-# change a to a extern monitor may cause wallpaper draw badlly, use feh automaticlly reload the wallpaper
-[[ -f ~/.fehbg ]] && . ~/.fehbg &
+setbg

@@ -11,4 +11,4 @@ else
   sleep 2; xrandr --output "$extern" --primary --auto --output "$intern" --auto --left-of "$extern" 
 fi
 
-[[ -f ~/.fehbg ]] && . ~/.fehbg
+setbg

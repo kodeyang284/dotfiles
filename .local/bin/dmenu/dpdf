@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ICON="📄"
+PDFs="find $HOME/Documents -type f"
+prompt="📄 PDF"
+prefix="$HOME/Documents/"
+
+cmd=$($PDFs | sed "s%$(echo $HOME/Documents/)%%g" | dmenu -i -p $prompt "$@")
+while [[ -n $cmd ]]; do
+	zathura "$prefix$cmd" 2>&1 >/dev/null
+	exit 0
+done

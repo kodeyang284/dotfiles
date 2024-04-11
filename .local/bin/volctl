@@ -5,6 +5,6 @@ if [[ -n $1 ]]; then
     +) pactl set-sink-volume @DEFAULT_SINK@ +1000 ;;
     -) pactl set-sink-volume @DEFAULT_SINK@ -1000 ;;
     m) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
-    *) echo "option error";;
+    *) notify-send "option error";;
     esac
 fi
