@@ -5,35 +5,24 @@ background = '#1d1f21' ## default black
 #foreground = '#fffbf6'
 
 [font]
-size = 9 
-
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-style = "Bold"
-
-[font.bold_italic]
-family = "JetBrainsMono Nerd Font"
-style = "Bold Italic"
-
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-style = "Italic"
-
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Regular"
+size = 9.5 
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 
 [window]
 dynamic_title = false
-opacity = 0.8 
+opacity = 0.8
 title = "RTFM"
 
-[cursor.style]
-shape = "Block"
-#shape = "Beam"
+[cursor]
+style = { shape = "Block" }
+#style = { shape = "Bean" }
+vi_mode_style = { shape = "Block" }
 
-[cursor.vi_mode_style]
-shape = "Block"
+[scrolling]
+history = 5000
 
 [keyboard]
 bindings = [
