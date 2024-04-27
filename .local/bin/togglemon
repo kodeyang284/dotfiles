@@ -1,12 +1,12 @@
 #!/bin/sh
 
 intern=eDP-1
-extern=$(xrandr | grep "\sconnected" | grep -v "$intern" | awk '{print $1}')
+extern=$(xrandr | grep "\sconnected" | grep -v $intern | awk '{print $1}')
 
 if [[ -n $extern ]]; then
-	xrandr --output "$intern" --off --output "$extern" --auto
+	xrandr --output $intern --off --output $extern --auto
 else
-	xrandr --output "$intern" --auto \
+	xrandr --output $intern --auto \
 		--output DP-2 --off \
 		--output DP-1 --off \
 		--output HDMI-1 --off \

@@ -1,15 +1,15 @@
-import = ["/home/kode/.config/alacritty/alacritty-theme/themes/iterm.toml"]
+import = ["/home/kode/.config/alacritty/alacritty-theme/themes/kanagawa_wave.toml"]
 
 [colors.primary]
-background = '#1d1f21' ## default black
+#background = '#1d1f21' ## default black
 #foreground = '#fffbf6'
 
 [font]
-size = 9.5 
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 9.25
+normal = { family = "Terminess Nerd Font", style = "Regular" }
+italic = { family = "Terminess Nerd Font", style = "Italic" }
+bold   = { family = "Terminess Nerd Font", style = "Bold" }
+bold_italic = { family = "Terminess Nerd Font", style = "Bold Italic" }
 
 [window]
 dynamic_title = false
