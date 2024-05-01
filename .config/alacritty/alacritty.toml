@@ -1,19 +1,20 @@
 import = ["/home/kode/.config/alacritty/alacritty-theme/themes/kanagawa_wave.toml"]
 
+
 [colors.primary]
 #background = '#1d1f21' ## default black
 #foreground = '#fffbf6'
 
 [font]
-size = 9.25
-normal = { family = "Terminess Nerd Font", style = "Regular" }
-italic = { family = "Terminess Nerd Font", style = "Italic" }
-bold   = { family = "Terminess Nerd Font", style = "Bold" }
-bold_italic = { family = "Terminess Nerd Font", style = "Bold Italic" }
+size = 12.5
+normal = { family = "Hack Nerd Font", style = "Regular" }
+italic = { family = "Hack Nerd Font", style = "Italic" }
+bold   = { family = "Hack Nerd Font", style = "Bold" }
+bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
 
 [window]
 dynamic_title = false
-opacity = 0.8
+opacity = 0.8 
 title = "RTFM"
 
 [cursor]

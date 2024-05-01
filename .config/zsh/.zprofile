@@ -24,5 +24,6 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 if [ -z "$DISPALY" ] && [ "$XDG_VTNR" = 1 ]; then
-  exec startx &>/dev/null
+  #exec startx &>/dev/null
+  exec Hyprland &>/dev/null
 fi
