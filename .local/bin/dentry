@@ -1,0 +1,9 @@
+#!/bin/sh
+
+entries="ls /home/kode/.local/bin/dmenu"
+prompt="🔎 "
+
+cmd=$($entries | sed 's/^/󰨃 /g' | dmenu -i -p "$prompt" "$@")
+if [[ -n $cmd ]]; then
+	$(echo "$cmd" | awk '{print $2}') >/dev/null &
+fi

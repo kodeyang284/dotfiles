@@ -1,0 +1,18 @@
+#!/bin/sh
+
+BG=${XDG_DATA_HOME:-$HOME/.local/share}/bg
+
+trueloc=$(readlink -f "$1") &&
+	case "$(file --mime-type -b "$trueloc")" in
+	image/*) ln -sf "$trueloc" "$BG" ;;
+	*)
+		notify-send "error image."
+		exit 1
+		;;
+	esac
+
+if [[ $XDG_SESSION_TYPE = wayland ]]; then
+  swaybg -m fill -i $BG >/dev/null 2>&1 &
+else
+  xwallpaper --zoom $BG
+fi
