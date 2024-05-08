@@ -65,7 +65,7 @@
   border-left: none;
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-mail, #clock, #temperature, #language{
+#mode, #battery, #cpu, #memory, #disk, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-mail, #clock, #temperature, #language{
   margin: 4px 2px;
   padding: 0 10px;
   background-color: @base02;

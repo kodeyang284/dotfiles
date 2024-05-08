@@ -1,3 +1,4 @@
 set confirm off
 set disassemble-next-line auto
-add-auto-load-safe-path /home/kode/Projects/Code/xv6-riscv/.gdbinit
+set debuginfod enable off
+add-auto-load-safe-path /home/kode/Projects/

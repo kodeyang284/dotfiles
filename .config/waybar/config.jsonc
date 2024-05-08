@@ -7,14 +7,14 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "idle_inhibitor", "pulseaudio", "backlight", "network"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["hyprland/submap", "hyprland/language", "cpu", "memory", "temperature", "battery", "tray", "clock"],
+    "modules-right": ["hyprland/submap", "hyprland/language", "cpu", "memory", /*"temperature",*/ "disk", "battery", "tray", "clock"],
     // Modules configuration
      "hyprland/workspaces": {
          "disable-scroll": true,
          "on-click": "activate",
          // "all-outputs": false,
-          "format": "{name}: {icon}",
-         //"format": "{name}",
+         // "format": "{name}: {icon}",
+         "format": "{name}",
          "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
          "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
          "format-icons": {
@@ -103,6 +103,10 @@
     },
     "memory": {
         "format": "{}% "
+    },
+    "disk": {
+        "format": "{specific_used:0.1f}GB ",
+        "unit":"GB"
     },
     "temperature": {
         // "thermal-zone": 2,
