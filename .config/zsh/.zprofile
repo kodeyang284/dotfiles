@@ -24,10 +24,6 @@ export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
-if [[ -f $ZDOTFILE/.ysyxrc ]]; then
-  source $ZDOTFILE/.ysyxrc
-fi
-
 if [ -z "$DISPALY" ] && [ "$XDG_VTNR" = 1 ]; then
   #exec startx &>/dev/null
   exec Hyprland &>/dev/null

@@ -16,7 +16,7 @@ TODO.
 
 * tpacpi-bat -s ST 1 79 # Start charging if battery below 79%
 * tpacpi-bat -s SP 1 80 # Stop charging if battery above 80%
-* tpacpi-bat -s IC 1 0 # Disable charging entirely
+* tpacpi-bat -s IC 1 0  # Disable charging entirely
 
 ## misc
 
