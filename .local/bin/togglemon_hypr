@@ -1,0 +1,27 @@
+#!/bin/sh
+
+HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
+target=$(grep -ne 'eDP-1.*disable.*' $HYPR_CONF)
+line=$(echo $target | cut -d: -f1)
+
+enable(){
+  sed -i "$line s/^/#/" $HYPR_CONF
+}
+
+disable(){
+  sed -i "$line s/^#//" $HYPR_CONF
+}
+
+is_enable(){
+  echo "$target" | grep -q "#"
+}
+
+main(){
+  if is_enable; then
+    disable
+  else
+    enable
+  fi
+}
+
+main "$@"
