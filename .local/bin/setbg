@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 BG=${XDG_DATA_HOME:-$HOME/.local/share}/bg
 
 trueloc=$(readlink -f "$1") &&
@@ -14,5 +16,6 @@ trueloc=$(readlink -f "$1") &&
 if [[ $XDG_SESSION_TYPE = wayland ]]; then
   swaybg -m fill -i $BG >/dev/null 2>&1 &
 else
+
   xwallpaper --zoom $BG
 fi
