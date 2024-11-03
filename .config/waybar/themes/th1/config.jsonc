@@ -3,8 +3,8 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
     "spacing": 0, // Gaps between modules
-    "modules-left": ["clock", "tray", "custom/apps", "wlr/taskbar", "hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["clock", "tray", "custom/apps", "wlr/taskbar", "sway/window"],
+    "modules-center": ["sway/workspaces"],
     //"modules-right": ["network", "pulseaudio", "pulseaudio#microphone", "custom/weather", "idle_inhibitor", "custom/screenshot", "custom/clipboardclear", "custom/wallpapers", "memory", "disk", "temperature", "backlight", "battery", "custom/power"],
     "modules-right": ["network", "pulseaudio", "pulseaudio#microphone", "idle_inhibitor",  "memory", "disk", "temperature", "backlight", "battery", "custom/power"],
     "fixed-center": true,
@@ -30,7 +30,7 @@
 	]
      },
 
-     "hyprland/window": {
+     "sway/window": {
         "format": "  {}",
         "separate-outputs": true,
         "rewrite": {
@@ -43,7 +43,7 @@
         "max-length": 20
      },
 
-     "hyprland/workspaces" : {
+     "sway/workspaces" : {
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,

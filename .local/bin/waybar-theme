@@ -4,6 +4,7 @@ set -e
 WAYBARHOME="$XDG_CONFIG_HOME/waybar"
 CONFIGFILE="config.jsonc"
 STYLEFILE="style.css"
+WAYBAR_RESTART="$WAYBARHOME/relaunch.sh"
 
 if [[ $1 ]]; then
   themedir="$WAYBARHOME/themes/$1"
@@ -14,10 +15,10 @@ if [[ $1 ]]; then
     ln -sf $themedir/$STYLEFILE "$WAYBARHOME/$STYLEFILE"
     ln -sf $themedir/$CONFIGFILE "$WAYBARHOME/$CONFIGFILE"
     echo "change waybar theme to $1"
-    $WAYBARHOME/relaunch.sh
+    $WAYBAR_RESTART
   fi
 else
-  $WAYBARHOME/relaunch.sh
+  $WAYBAR_RESTART
   echo "specify themes"
   exit 1
 fi

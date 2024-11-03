@@ -18,8 +18,6 @@ set novisualbell
 set hlsearch
 set scrolloff=4
 set completeopt=menu,preview,longest
-set <S-h> :bp<CR>
-set <S-l> :bn<CR>
 inoremap kj <Esc>
 inoremap jk <Esc>
 

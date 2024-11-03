@@ -61,8 +61,8 @@
 #waybar {
 	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
 	color: @white;
-	font-family: 'JetBrainsMono Nerd Font', sans-serif;
-	font-size: 14px;
+	font-family: 'JetBrainsMono Nerd Font Propo', sans-serif;
+	font-size: 15px;
 	/*font-weight: bold;*/
 }
 
@@ -172,6 +172,11 @@
 #cpu {
 	background: @cpu;
 	color: @white;
+}
+
+#disk {
+	background: @temp;
+	color: @black;
 }
 
 #temperature {

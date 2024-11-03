@@ -1,34 +1,32 @@
-import = ["/home/kode/.config/alacritty/alacritty-theme/themes/kanagawa_wave.toml"]
-
 
 [colors.primary]
 #background = '#1d1f21' ## default black
 #foreground = '#fffbf6'
 
 [font]
-size = 13.5
-normal = { family = "Hack Nerd Font", style = "Regular" }
-italic = { family = "Hack Nerd Font", style = "Italic" }
-bold   = { family = "Hack Nerd Font", style = "Bold" }
-bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
+size = 15.5
+normal = { family = "ComicShanns Nerd Font", style = "Regular" }
+italic = { style = "Italic" }
+bold   = { style = "Bold" }
+bold_italic = { style = "Bold Italic" }
 
 [window]
 dynamic_title = false
-opacity = 0.8 
-title = "RTFM"
+opacity = 0.8
+title = "READ THE FUCKING MENU!!!"
 
 [cursor]
 style = { shape = "Block" }
 #style = { shape = "Bean" }
-vi_mode_style = { shape = "Block" }
+#vi_mode_style = { shape = "Block" }
 
 [scrolling]
 history = 5000
 
-[keyboard]
-bindings = [
-  { key = "F", mods = "Control|Shift", action = "ToggleFullscreen" },
-]
-
 [env]
 WINIT_X11_SCALE_FACTOR = "1.66"
+
+[general]
+import = ["/home/kode/.config/alacritty/alacritty-theme/themes/kanagawa_wave.toml"]
+#import = ["/home/kode/.config/alacritty/alacritty-theme/themes/enfocado_dark.toml"]
+#import = ["/home/kode/.config/alacritty/alacritty-theme/themes/everforest_dark.toml"]

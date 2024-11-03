@@ -14,8 +14,10 @@ trueloc=$(readlink -f "$1") &&
 	esac
 
 if [[ $XDG_SESSION_TYPE = wayland ]]; then
+  if  pgrep swaybg; then
+    pkill swaybg
+  fi
   swaybg -m fill -i $BG >/dev/null 2>&1 &
 else
-
   xwallpaper --zoom $BG
 fi

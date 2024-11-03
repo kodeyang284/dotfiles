@@ -35,6 +35,7 @@ window#waybar {
 	padding: 0 2px;
 	color: #fdf6e3;
 }
+/*
 #workspaces button.focused {
 	color: #268bd2;
 }
@@ -43,6 +44,21 @@ window#waybar {
 	text-shadow: inherit;
 }
 #workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
+}
+*/
+
+/* this is for hyprland */
+#workspaces button.active {
+	color: #268bd2;
+}
+#workspaces button.hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button.visible {
 	background: #1a1a1a;
 	border: #1a1a1a;
 	padding: 0 3px;

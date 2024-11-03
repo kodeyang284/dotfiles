@@ -13,36 +13,23 @@ set $menu rofi -show drun -show-icons
 
 exec waybar &
 exec dunst &
-exec_always setbg &
+exec setbg &
 
-output "SKYDATA S.P.A. F24G3 0x00000001" mode 1920x1080@120HZ
-output "STD Computer Inc YD270Q 1234567890123" mode 2560x1440@144HZ
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
 exec swayidle -w \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+         timeout 1200 'swaymsg "output * power off"' \
+              resume 'swaymsg "output * power on"'
+
+output "SKYDATA S.P.A. F24G3 0x00000001" pos 0 0 mode 1920x1080@120HZ
+output "STD Computer Inc YD270Q 1234567890123" pos 0 0 mode 2560x1440@144HZ
 
     input type:keyboard {
-        xkb_numlock enabled
+        xkb_options caps:none
         repeat_delay 220
         repeat_rate 100
     }
     input type:touchpad {
-    tap enabled
-    natural_scroll disabled
+      tap enabled
+      natural_scroll disabled
     }
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -56,7 +43,10 @@ exec swayidle -w \
     bindsym $mod+e exec $floatterm -e musicfox
     bindsym $mod+d exec $floatterm -e ranger
     bindsym $mod+o exec dentry
+    bindsym $mod+bracketleft exec dwmapps
     bindsym $mod+w exec $broswer
+    bindsym --no-repeat $mod+m exec togglemon_sway
+    bindsym $mod+tab focus prev
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -140,8 +130,8 @@ exec swayidle -w \
     bindsym $mod+grave scratchpad show
 
     # audio settings
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
     bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -152,37 +142,37 @@ exec swayidle -w \
 #
 # Resizing containers:
 #
-mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $mod+Shift+Left resize shrink width 10px
+    bindsym $mod+Shift+Down resize grow height 10px
+    bindsym $mod+Shift+Up resize shrink height 10px
+    bindsym $mod+Shift+Right resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
+# hide title bar
 font pango:monospace 0.01 
 titlebar_padding 1
-default_border pixel 3
-smart_borders on
+titlebar_border_thickness 0
+xwayland enable
+# barder color
+#client.focused		#FF6358 #ff6358 #fdf6e3 #119490
+#client.focused_inactive #222222 #222222 #F1F1F1 #222222
+
+default_border pixel 1
+#smart_borders on
+gaps inner 4
+gaps outer 1
 
 # rules
 for_window [app_id="floatterm"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_role="dialog"] floating enable
-assign [app_id="firefox"] 2
+for_window [window_role = "pop-up"] floating enable
+for_window [window_role = "bubble"] floating enable
+for_window [window_role = "dialog"] floating enable
+for_window [window_type = "dialog"] floating enable
+for_window [window_role = "task_dialog"] floating enable
+for_window [window_type = "menu"] floating enable
+for_window [app_id = "floating"] floating enable
+for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+for_window [class = "(?i)pinentry"] floating enable
+for_window [title = "Administrator privileges required"] floating enable
+#assign [app_id="firefox"] 2
 
 include /etc/sway/config.d/*

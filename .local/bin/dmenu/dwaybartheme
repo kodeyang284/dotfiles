@@ -1,8 +1,9 @@
-#/bin/sh
+#!/bin/sh
+
 THEMESHOME="$XDG_CONFIG_HOME/waybar/themes/"
 THEMES="find $THEMESHOME -type d"
 cmd=$($THEMES | sed 1d | sed "s%$THEMESHOME%%g" | dmenu -i -p "theme" "$@")
-while [[ -n $cmd ]]; do
+while [ -n $cmd ]; do
   waybar-theme $cmd
   exit 0
 done

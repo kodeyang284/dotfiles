@@ -1,6 +1,6 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Hack Nerd Font Mono";
+  font-family: "FiraCode Nerd Font Propo";
   font-size: 18px;
   min-height: 0;
 }
@@ -29,7 +29,8 @@ window#waybar.hidden {
 #window {
   /*padding-left: 8;*/
   /*padding-right: 8;*/
-  background-color: rgba(0,0,0,0.3);
+  /*background-color: rgba(0,0,0,0.3);*/
+  background-color: transparent;
   font-size:1.4em;
   font-weight: bold;
 }

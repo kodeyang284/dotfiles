@@ -23,8 +23,13 @@ export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export KLAYOUT_HOME="$XDG_CONFIG_HOME/klayout"
+
+export GRIM_DEFAULT_DIR="$HOME/Pictures/grim"
 
 if [ -z "$DISPALY" ] && [ "$XDG_VTNR" = 1 ]; then
   #exec startx &>/dev/null
-  exec Hyprland &>/dev/null
+  #exec Hyprland &>/dev/null
+  exec sway &>/dev/null
+  #exec waybar &>/dev/null
 fi

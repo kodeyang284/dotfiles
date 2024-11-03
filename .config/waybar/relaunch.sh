@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
-killall waybar # Kill all instances of waybar
+if pgrep waybar; then
+  killall waybar
+fi
 waybar >/dev/null & # Launch statusbar
-

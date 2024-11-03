@@ -1,11 +1,4 @@
 #!/bin/env zsh
 
 WALL="$HOME/Pictures/wallpaper"
-
-#if [[ $XDG_SESSION_TYPE = wayland ]]; then
-#  find $WALL -type f | shuf | imv
-#else
-#  find $WALL -type f | shuf | grep -E -v 'README*|1.sh' | sxiv -t -
-#fi
-
 find $WALL -type f | shuf | grep -E -v 'README*|1.sh' | sxiv -t -

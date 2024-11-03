@@ -10,7 +10,7 @@ TODO.
 ## cp files from remote to local 
 
 * scp -r kodeyang@10.20.221.13:/home/kodeyang/ic_proj/uvm/Menus/ ./Doc
-* docker run -it --hostname lizhen --mac-address 02:42:ac:11:00:02 phyzli/ubuntu18.04_xfce4_vnc4server_synopsys
+* docker run -it --hostname lizhen --ma;-address 02:42:ac:11:00:02 phyzli/ubuntu18.04_xfce4_vnc4server_synopsys
 
 ## thinkpad x1 carbon
 

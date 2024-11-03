@@ -5,7 +5,7 @@ alias nf="neofetch | lolcat"
 alias r="ranger"
 alias vi="nvim"
 
-##awsome fzf alias
+## awsome fzf alias
 alias f='fzf --height 40% --reverse --bind "enter:become(nvim {})"'
 alias fh='find ~ -type f | fzf --height 40% --reverse --bind "enter:become(nvim {})"'
 alias fr='find ~/.config -type f | fzf --height 40% --reverse --bind "enter:become(nvim {})"'
@@ -13,3 +13,6 @@ alias c='cd $(find ~/ -type d | fzf --height 40% --reverse)'
 
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias sdot='dotfiles ls-tree -r kodearch --name-only'
+
+## tools
+alias gcc ccache gcc

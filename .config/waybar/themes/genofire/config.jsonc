@@ -5,8 +5,8 @@
 	// "width": 1280, // Waybar width
 
 	// Choose the order of the modules
-	"modules-left": ["hyprland/workspaces"],
-	// "modules-center": ["sway/window"],
+	"modules-left": ["sway/workspaces"],
+	"modules-center": ["sway/window"],
 	"modules-right": ["custom/disk_home", "custom/disk_root","temperature", "cpu", "memory", "custom/mail", "network", "backlight", "pulseaudio", "clock", "battery", "idle_inhibitor", "tray"],
 
 	// Modules configuration
