@@ -4,7 +4,7 @@
 #foreground = '#fffbf6'
 
 [font]
-size = 15.5
+size = 16
 normal = { family = "ComicShanns Nerd Font", style = "Regular" }
 italic = { style = "Italic" }
 bold   = { style = "Bold" }
@@ -28,5 +28,6 @@ WINIT_X11_SCALE_FACTOR = "1.66"
 
 [general]
 import = ["/home/kode/.config/alacritty/alacritty-theme/themes/kanagawa_wave.toml"]
+#import = ["/home/kode/.config/alacritty/alacritty-theme/themes/gruvbox_material_hard_dark.toml"]
 #import = ["/home/kode/.config/alacritty/alacritty-theme/themes/enfocado_dark.toml"]
 #import = ["/home/kode/.config/alacritty/alacritty-theme/themes/everforest_dark.toml"]

@@ -2,7 +2,8 @@
 
 _find() {
   path="$(which $1 2>/dev/null)"
-  if [[ ! $path ]] ;then
+  if [[ ! $path ]]
+  then
     exit 1
   else
     realpath "$path"
@@ -15,9 +16,11 @@ is_script() {
 }
 
 main() {
-  if [ -n $1 ]; then 
+  if [ -n $1 ]
+  then 
     src="$(_find $1)"
-    if is_script "$src"; then
+    if is_script "$src"
+    then
       $EDITOR "$src"
     else
       echo "not a script"

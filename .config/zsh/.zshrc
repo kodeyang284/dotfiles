@@ -162,5 +162,23 @@ zstyle ':completion:*' cache-path "$ZDOTDIR/.zcompcache"
 
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
+
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+
+# awsome functions
+#
+fzf_cdhelper() {
+  local fd_options fzf_options target
+  fd_options=(
+    -type d
+  )
+
+  fzf_options=(
+    --height 40%
+    --reverse
+    --exit-0
+  )
+  target="$(find "${1:-$HOME}" "${fd_options[@]}" | fzf "${fzf_options[@]}")"
+  cd "$target" || return 1
+}

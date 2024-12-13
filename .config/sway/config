@@ -39,14 +39,19 @@ output "STD Computer Inc YD270Q 1234567890123" pos 0 0 mode 2560x1440@144HZ
     bindsym $mod+Return exec $term
     bindsym $mod+q kill
     bindsym $mod+p exec $menu
+    bindsym $mod+Shift+p exec screenshoot -g
     bindsym $mod+x exec $floatterm
     bindsym $mod+e exec $floatterm -e musicfox
     bindsym $mod+d exec $floatterm -e ranger
     bindsym $mod+o exec dentry
     bindsym $mod+bracketleft exec dwmapps
     bindsym $mod+w exec $broswer
-    bindsym --no-repeat $mod+m exec togglemon_sway
+    bindsym $mod+m exec ~/.config/sway/sway_maximize
+    bindsym --no-repeat $mod+Shift+m exec togglemon_sway
     bindsym $mod+tab focus prev
+    bindsym $mod+equal opacity plus 0.05
+    bindsym $mod+minus opacity minus 0.05
+    bindsym $mod+plus opacity set 1
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -156,10 +161,12 @@ xwayland enable
 #client.focused		#FF6358 #ff6358 #fdf6e3 #119490
 #client.focused_inactive #222222 #222222 #F1F1F1 #222222
 
-default_border pixel 1
+default_border pixel 3
 #smart_borders on
-gaps inner 4
-gaps outer 1
+#gaps inner 4
+#gaps outer 1
+gaps inner 0
+gaps outer 0
 
 # rules
 for_window [app_id="floatterm"] floating enable
@@ -173,6 +180,8 @@ for_window [app_id = "floating"] floating enable
 for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
 for_window [class = "(?i)pinentry"] floating enable
 for_window [title = "Administrator privileges required"] floating enable
+for_window [app_id = "zathura"] opacity 0.8
+#for_window [app_id = "firefox"] opacity 0.8
 #assign [app_id="firefox"] 2
 
 include /etc/sway/config.d/*

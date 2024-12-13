@@ -1,9 +1,9 @@
+export VERILATOR_ROOT=/home/kode/Projects/tools/verilator
 YSYX_HOME=/home/kode/Projects/ysyx-workbench
 #YSYX_HOME=/home/kode/Projects/projn/ysyx-riscv64
 export NPC_HOME=$YSYX_HOME/npc
 export NEMU_HOME=$YSYX_HOME/nemu
 export NAVY_HOME=$YSYX_HOME/navy-apps
-export VERILATOR_ROOT=/home/kode/Projects/tools/verilator
 export AM_HOME=$YSYX_HOME/abstract-machine
-export SOC_HOME=/home/kode/Projects/projn/ysyx-riscv64/ysyxSoC
-export NVBOARD_HOME=/home/kode/Projects/projn/ysyx-riscv64/nvboard
+export SOC_HOME=$YSYX_HOME/ysyxSoC
+export NVBOARD_HOME=$YSYX_HOME/nvboard
