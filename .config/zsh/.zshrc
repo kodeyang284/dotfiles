@@ -1,40 +1,31 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+_prompt_basher_pwd() {
+  local git_root current_dir
+  if git_root=$(command git rev-parse --show-toplevel 2>/dev/null); then
+    current_dir="${PWD#${git_root:h}/}"
+  else
+    current_dir=${(%):-%~}
+  fi
+  print -n "%B%F{magenta}${current_dir}%b"
+}
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+setopt nopromptbang prompt{cr,percent,sp,subst}
 
-# Start configuration added by Zim install {{{
-#
-# User configuration sourced by interactive shells
-#
+_venv() {
+  local venv
+  if ! [[ -z $VIRTUAL_ENV ]]; then
+    venv="($(basename $VIRTUAL_ENV)) "
+  fi
+  print -n "${venv}"
+}
 
-# -----------------
-# Zsh configuration
-# -----------------
-
-#
-# History
-#
+#PS1='[$(_venv)%B%(!:%F{red}:%F{green})%n%f%F{green}@%m%b%f:$(_prompt_basher_pwd)${(e)git_info[prompt]}%f%(!:#:$)] '
+PS1='%F{red}[%f$(_venv)%B%(!:%F{cyan}:%F{yellow})%n%f%F{green}@%f%F{blue}%m%b%f $(_prompt_basher_pwd)%f%F{red}]%f%(!:#:$) '
+RPS1='%(?::%F{red}$?)'
 
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
-
-#
-# Input/output
-#
-
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -v
-
 # Prompt for spelling correction of commands.
 #setopt CORRECT
 
@@ -44,68 +35,11 @@ bindkey -v
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}
 
-# -----------------
-# Zim configuration
-# -----------------
-
-# Use degit instead of git as the default tool to install and update modules.
-#zstyle ':zim:zmodule' use 'degit'
-
-# --------------------
-# Module configuration
-# --------------------
-
-#
-# git
-#
-
-# Set a custom prefix for the generated aliases. The default prefix is 'G'.
-#zstyle ':zim:git' aliases-prefix 'g'
-
-#
-# input
-#
-
 # Append `../` to your input for each `.` you type after an initial `..`
 #zstyle ':zim:input' double-dot-expand yes
 
-#
-# termtitle
-#
-
-# Set a custom terminal title format using prompt expansion escape sequences.
-# See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
-# If none is provided, the default '%n@%m: %~' is used.
-#zstyle ':zim:termtitle' format '%1~'
-
-#
-# zsh-autosuggestions
-#
-
-# Disable automatic widget re-binding on each precmd. This can be set when
-# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-
-# Customize the style that the suggestions are shown with.
-# See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
-
-#
-# zsh-syntax-highlighting
-#
-
-# Set what highlighters will be used.
-# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-# Customize the main highlighter styles.
-# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
-#typeset -A ZSH_HIGHLIGHT_STYLES
-#ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
-
-# ------------------
-# Initialize modules
-# ------------------
 
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
@@ -125,14 +59,6 @@ fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
-# ------------------------------
-# Post-init module configuration
-# ------------------------------
-
-#
-# zsh-history-substring-search
-#
-
 zmodload -F zsh/terminfo +p:terminfo
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
 for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
@@ -144,9 +70,6 @@ unset key
 ### zim plugings database dir settings
 ZSHZ_DATA=${ZIM_HOME}/pugings/zsh-z
 
-
-# }}} End configuration added by Zim install
-
 if [[ -f $ZDOTDIR/.aliasrc ]]; then
   source $ZDOTDIR/.aliasrc
 fi
@@ -156,12 +79,6 @@ if [[ -f $ZDOTDIR/.projrc ]]; then
 fi
 
 zstyle ':completion:*' cache-path "$ZDOTDIR/.zcompcache"
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
@@ -182,3 +99,4 @@ fzf_cdhelper() {
   target="$(find "${1:-$HOME}" "${fd_options[@]}" | fzf "${fzf_options[@]}")"
   cd "$target" || return 1
 }
+

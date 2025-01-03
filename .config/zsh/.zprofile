@@ -6,6 +6,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_DIRS="$XDG_DATA_HOME:/usr/share:/usr/local/share"
 export XDG_DESKTOP_DIR="$HOME/.Desktop"
 
+#clean up the $HOME dirctory
+
 #export PATH=$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}
 export PATH="$PATH:$(find ~/.local/bin -type d | paste -s -d ':')"
 export EDITOR='nvim'
@@ -25,7 +27,10 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export KLAYOUT_HOME="$XDG_CONFIG_HOME/klayout"
 
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+export PYTHONUSERBASE=$XDG_DATA_HOME/python
+#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 #export JAVA_OPTS="-Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=7890"
 
 export GRIM_DEFAULT_DIR="$HOME/Pictures/grim"
@@ -33,6 +38,8 @@ export GRIM_DEFAULT_DIR="$HOME/Pictures/grim"
 if [ -z "$DISPALY" ] && [ "$XDG_VTNR" = 1 ]; then
   #exec startx &>/dev/null
   #exec Hyprland &>/dev/null
+  _JAVA_AWT_WM_NONREPARENTING=1
   exec sway &>/dev/null
   #exec waybar &>/dev/null
 fi
+

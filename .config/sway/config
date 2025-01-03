@@ -14,6 +14,7 @@ set $menu rofi -show drun -show-icons
 exec waybar &
 exec dunst &
 exec setbg &
+exec myserver &
 
 exec swayidle -w \
          timeout 1200 'swaymsg "output * power off"' \
@@ -42,7 +43,7 @@ output "STD Computer Inc YD270Q 1234567890123" pos 0 0 mode 2560x1440@144HZ
     bindsym $mod+Shift+p exec screenshoot -g
     bindsym $mod+x exec $floatterm
     bindsym $mod+e exec $floatterm -e musicfox
-    bindsym $mod+d exec $floatterm -e ranger
+    bindsym $mod+d exec $term -e ranger
     bindsym $mod+o exec dentry
     bindsym $mod+bracketleft exec dwmapps
     bindsym $mod+w exec $broswer
@@ -183,5 +184,7 @@ for_window [title = "Administrator privileges required"] floating enable
 for_window [app_id = "zathura"] opacity 0.8
 #for_window [app_id = "firefox"] opacity 0.8
 #assign [app_id="firefox"] 2
+assign [class="Vivado"] 8
+assign [class="Vitis IDE"] 8
 
 include /etc/sway/config.d/*
