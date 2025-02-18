@@ -6,16 +6,18 @@
 [font]
 size = 17.5
 #size = 11
-#normal = { family = "ComicShanns Nerd Font", style = "Regular" }
-normal = { family = "Comic Code", style = "Regular" }
+normal = { family = "ComicShanns Nerd Font", style = "Regular" }
+#normal = { family = "Comic code", style = "Regular" }
 italic = { style = "Italic" }
 bold   = { style = "Bold" }
 bold_italic = { style = "Bold Italic" }
 
 [window]
-dynamic_title = false
+dynamic_title = true
 opacity = 0.8
-title = "READ THE FUCKING MENU!!!"
+#blur = true
+#title = "READ THE FUCKING MENU!!!"
+title = "RTFM!!!"
 
 [cursor]
 style = { shape = "Block" }
