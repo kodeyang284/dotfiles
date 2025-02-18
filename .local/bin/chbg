@@ -1,4 +1,9 @@
-#!/bin/env zsh
+#!/bin/sh
 
 WALL="$HOME/Pictures/wallpaper"
-find $WALL -type f | shuf | grep -E -v 'README*|1.sh' | sxiv -t -
+
+if [[ $XDG_SESSION_TYPE = wayland ]]; then
+  swayimg -g $WALL
+else
+  find $WALL -type f | shuf | grep -E -v 'README*|1.sh' | sxiv -t -
+fi

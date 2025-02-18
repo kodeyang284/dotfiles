@@ -31,15 +31,13 @@ export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
 export PYTHONUSERBASE=$XDG_DATA_HOME/python
 #export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-#export JAVA_OPTS="-Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=7890"
 
 export GRIM_DEFAULT_DIR="$HOME/Pictures/grim"
 
 if [ -z "$DISPALY" ] && [ "$XDG_VTNR" = 1 ]; then
   #exec startx &>/dev/null
   #exec Hyprland &>/dev/null
-  _JAVA_AWT_WM_NONREPARENTING=1
+  #_JAVA_AWT_WM_NONREPARENTING=1
   exec sway &>/dev/null
-  #exec waybar &>/dev/null
 fi
 

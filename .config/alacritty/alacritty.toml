@@ -4,8 +4,10 @@
 #foreground = '#fffbf6'
 
 [font]
-size = 17
-normal = { family = "ComicShanns Nerd Font", style = "Regular" }
+size = 17.5
+#size = 11
+#normal = { family = "ComicShanns Nerd Font", style = "Regular" }
+normal = { family = "Comic Code", style = "Regular" }
 italic = { style = "Italic" }
 bold   = { style = "Bold" }
 bold_italic = { style = "Bold Italic" }
