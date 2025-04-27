@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ -n $1 ]]; then
+if [ -n "$1" ]; then
     case "$1" in
     +) pactl set-sink-volume @DEFAULT_SINK@ +1000 ;;
     -) pactl set-sink-volume @DEFAULT_SINK@ -1000 ;;

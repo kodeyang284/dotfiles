@@ -72,9 +72,13 @@ if [[ -f $ZDOTDIR/.projrc ]]; then
 fi
 
 zstyle ':completion:*' cache-path "$ZDOTDIR/.zcompcache"
+#bindkey -r "^L"
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+
+# wtf
+eval "$(thefuck --alias)"
 
 # awsome functions
 #

@@ -5,16 +5,23 @@ set $down j
 set $up k
 set $right l
 
-set $terminal  alacritty
-set $term  alacritty msg create-window
-set $floatterm  $term --class floatterm
-set $broswer zen-browser
+#set $terminal  alacritty
+#set $term  alacritty msg create-window
+#set $floatterm  $term --class floatterm -o 'window.opacity = 1'
+
+set $terminal  footclient
+set $term  footclient
+set $floatterm  $term -a floatterm -o 'colors.alpha=1'
+
+#set $broswer zen-browser
+set $broswer firefox-developer-edition
 set $menu rofi -show drun -show-icons
 
 exec waybar &
 exec dunst &
 exec setbg &
-exec myserver &
+exec foot -s &
+#exec myserver &
 
 exec swayidle -w \
          timeout 1200 'swaymsg "output * power off"' \
@@ -42,7 +49,7 @@ bindsym $mod+q kill
 bindsym $mod+p exec $menu
 bindsym $mod+Shift+p exec screenshoot -g
 bindsym $mod+x exec $floatterm
-bindsym $mod+e exec $floatterm -e musicfox
+bindsym $mod+e exec $floatterm musicfox
 bindsym $mod+d exec $term -e ranger
 bindsym $mod+o exec dentry
 bindsym $mod+bracketleft exec dwmapps
@@ -111,7 +118,7 @@ bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
 bindsym $mod+Shift+s layout stacking
-# bindsym $mod+w layout tabbed
+bindsym $mod+Shift+w layout tabbed
 bindsym $mod+Shift+e layout toggle split
 
 # Make the current focus fullscreen
@@ -174,7 +181,7 @@ gaps inner 0
 gaps outer 0
 
 # rules
-for_window [app_id="floatterm"] floating enable, border pixel 2
+for_window [app_id="floatterm"] floating enable, resize set width 900px height 700px
 for_window [window_role = "pop-up"] floating enable
 for_window [window_role = "bubble"] floating enable
 for_window [window_role = "dialog"] floating enable
@@ -183,7 +190,7 @@ for_window [window_role = "task_dialog"] floating enable
 for_window [window_type = "menu"] floating enable
 for_window [app_id = "floating"] floating enable
 for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
-for_window [class = "(?i)pinentry"] floating enable
+for_window [app_id = "(?i)pinentry"] floating enable
 for_window [title = "Administrator privileges required"] floating enable
 #for_window [app_id = "zathura"] opacity 0.8
 #for_window [app_id = "firefox"] opacity 0.8

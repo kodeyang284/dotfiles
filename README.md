@@ -21,3 +21,4 @@ TODO.
 ## misc
 
 * zsh has the EXTENDED_GLOB option, so carfully use regxg
+
