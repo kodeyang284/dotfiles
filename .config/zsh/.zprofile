@@ -30,7 +30,8 @@ export KLAYOUT_HOME="$XDG_CONFIG_HOME/klayout"
 export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
 export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
 export PYTHONUSERBASE=$XDG_DATA_HOME/python
-#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 export GRIM_DEFAULT_DIR="$HOME/Pictures/grim"
 

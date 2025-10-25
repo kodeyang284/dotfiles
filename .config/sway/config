@@ -11,7 +11,7 @@ set $right l
 
 set $terminal  footclient
 set $term  footclient
-set $floatterm  $term -a floatterm -o 'colors.alpha=1'
+set $floatterm  $term -a floatterm -o 'colors.alpha=0.8'
 
 #set $broswer zen-browser
 set $broswer firefox-developer-edition
@@ -28,7 +28,9 @@ exec swayidle -w \
               resume 'swaymsg "output * power on"'
 
 output "SKYDATA S.P.A. F24G3 0x00000001" pos 0 0 mode 1920x1080@120HZ
+output "TWO Q27GS 0x00000001" mode 1920x1080@100HZ
 output "STD Computer Inc YD270Q 1234567890123" pos 0 0 mode 2560x1440@144HZ
+output "PDA PX27QA2 0x00000001" pos 0 0 mode 2560x1440@60HZ
 
 input type:keyboard {
     xkb_options caps:none
@@ -171,6 +173,7 @@ titlebar_border_thickness 0
 xwayland enable
 # barder color
 #client.focused		#FF6358 #ff6358 #fdf6e3 #119490
+#client.focused		#6f3f89 #6f3f89 #fdf6e3 #119490
 #client.focused_inactive #222222 #222222 #F1F1F1 #222222
 
 default_border pixel 2

@@ -78,7 +78,7 @@ zstyle ':completion:*' cache-path "$ZDOTDIR/.zcompcache"
 eval "$(fzf --zsh)"
 
 # wtf
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 # awsome functions
 #

@@ -59,7 +59,8 @@
 
 /* The whole bar */
 #waybar {
-	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
+	/*background: rgba(40, 40, 40, 0.8784313725);*/ /* #282828e0 */
+	background: rgba(40, 40, 40, 1); /* #282828e0 */
 	color: @white;
 	font-family: 'JetBrainsMono Nerd Font Propo', sans-serif;
 	font-size: 15px;

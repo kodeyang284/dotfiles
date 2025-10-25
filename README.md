@@ -4,7 +4,7 @@ TODO.
 
 ## archlinux set up
 
-* 常用软件:
+* normal apps:
   * pacman -S  TODO
 
 ## cp files from remote to local 
@@ -21,4 +21,4 @@ TODO.
 ## misc
 
 * zsh has the EXTENDED_GLOB option, so carfully use regxg
-
+* sync date time: ntpdate us.pool.ntp.org; timedatectl set-ntp true

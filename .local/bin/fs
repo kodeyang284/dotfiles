@@ -2,8 +2,7 @@
 
 _find() {
   path="$(which "$1" 2>/dev/null)"
-  #if [[ ! $path ]]
-  if ! $path
+  if [[ ! $path ]]
   then
     exit 1
   else

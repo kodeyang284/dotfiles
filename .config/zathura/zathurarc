@@ -1,2 +1,2 @@
 set selection-clipboard clipboard
-include darktheme
+#include darktheme

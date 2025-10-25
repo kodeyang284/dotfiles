@@ -15,8 +15,8 @@ set shortmess=ati
 set noerrorbells
 set vb t_vb=
 set novisualbell
-set hlsearch
 set scrolloff=4
+set hlsearch
 set completeopt=menu,preview,longest
 inoremap kj <Esc>
 inoremap jk <Esc>

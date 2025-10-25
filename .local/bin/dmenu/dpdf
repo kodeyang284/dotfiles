@@ -1,11 +1,11 @@
 #!/bin/bash
 
+DOCS="$HOME/Documents"
 ICON="📄"
-PDFs="find $HOME/Documents -type f"
 prompt="📄 PDF"
 prefix="$HOME/Documents/"
 
-cmd=$($PDFs | sed "s%$(echo $HOME/Documents/)%%g" | dmenu -i -p $prompt "$@")
+cmd=$(find "$DOCS" -type f -iname "*.pdf" -not -path "*/mydoc/*"| sed "s%$(echo $HOME/Documents/)%%g" | dmenu -i -p $prompt "$@")
 while [[ -n $cmd ]]; do
 	zathura "$prefix$cmd" 2>&1 >/dev/null
 	exit 0
